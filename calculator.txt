@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interest Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    input[type="button"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 3px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    input[type="button"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Interest Calculator</h2>
+    <label for="principal">Principal Amount:</label>
+    <input type="text" id="principal" placeholder="Enter principal amount"><br>
+    <label for="rate">Interest Rate (%):</label>
+    <input type="text" id="rate" placeholder="Enter interest rate"><br>
+    <label for="years">Time (in years):</label>
+    <input type="text" id="years" placeholder="Enter number of years"><br>
+    <input type="button" value="Calculate Interest" onclick="calculateInterest()">
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateInterest() {
+      var principal = parseFloat(document.getElementById('principal').value);
+      var rate = parseFloat(document.getElementById('rate').value);
+      var years = parseFloat(document.getElementById('years').value);
+
+      var interest = (principal * rate * years) / 100;
+
+      var resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '<h3>Interest: ' + interest.toFixed(2) + '</h3>';
+    }
+  </script>
+</body>
+</html>
